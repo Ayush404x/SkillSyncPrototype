@@ -6,6 +6,7 @@ import RoleSelection from './pages/RoleSelection'
 import StudentDashboard from './pages/StudentDashboard'
 import SkillGap from './pages/SkillGap'
 import CourseRecommendations from './pages/CourseRecommendations'
+import ResumeBuilder from './pages/ResumeBuilder'
 import CompanyDashboard from './pages/CompanyDashboard'
 import CompanyRequirements from './pages/CompanyRequirements'
 import GovDashboard from './pages/GovDashboard'
@@ -41,7 +42,11 @@ export default function App(){
             <CourseRecommendations/>
           </ProtectedRoute>
         }/>
-
+        <Route path="/student/resume-builder" element={
+  <ProtectedRoute role="student">
+    <ResumeBuilder/>
+  </ProtectedRoute>
+}/>
         {/* Company Portal Routes */}
         <Route path="/company" element={
           <ProtectedRoute role="company">
